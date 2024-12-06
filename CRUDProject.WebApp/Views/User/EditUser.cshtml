@@ -1,0 +1,17 @@
+﻿@using CRUDProject.Entities.Entities
+@model UpdateAppUserViewModel
+<div class="card">
+    <div class="card-header">
+        <strong>(@Model.Username) Kullanıcı Detay</strong>
+    </div>
+    <div class="card-body">
+        <form asp-controller="User" asp-action="EditUser" method="post" enctype='multipart/form-data'
+        style="width:600px;display:flex;flex-direction:column;">
+            <input style="display:none" asp-for="Id" />
+            <label for="username">Kullanıcı Adı</label>
+            <input id="username" type="text" class="form-control" asp-for="Username" />
+            <input type="file" class="form-control" asp-for="File" />
+            <button type="submit" class="mt-2 btn btn-outline-success">Güncelle</button>
+        </form>
+    </div>
+</div>
